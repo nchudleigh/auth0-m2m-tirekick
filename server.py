@@ -15,6 +15,13 @@ require_auth.register_token_validator(validator)
 APP = Flask(__name__)
 
 
+@APP.route("/callback")
+def callback():
+    """No access token required."""
+
+    return "This is a callback page"
+
+
 @APP.route("/api/public")
 def public():
     """No access token required."""
